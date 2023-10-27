@@ -51,7 +51,10 @@ x8=st.number_input("กรุณาป้อนข้อมูล Age:")
 if st.button("พยากรณ์ข้อมูล"):
     x_input=[[x1,x2,x3,x4,x5,x6,x7,x8]]
     y_predict=knnModel.predict(scaler.transform(x_input))
-    st.write(y_predict)
+    if y_predict == 1:
+        st.write("มีความเสียงเป็นเบาหวาน")
+    else:
+        st.write("ไม่มีความเสี่ยง / ปกติ")
     st.button("ไม่พยากรณ์ข้อมูล")
 else:
     st.button("ไม่พยากรณ์ข้อมูล")
