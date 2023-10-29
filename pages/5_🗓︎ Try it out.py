@@ -56,12 +56,6 @@ x5 = st.number_input("กรุณาป้อนข้อมูล อินซ
 height = st.number_input("กรุณาป้อน ส่วนสูง สำหรับคำนวณ BMI (m):")
 weight = st.number_input("กรุณาป้อน น้ำหนัก สำหรับคำนวณ BMI (kg):")
 
-x6 = 0.0
-
-if st.button("คำนวณ BMI"):
-    x6 = weight / pow(height, 2)
-    st.write("BMI ของคุณคือ:", '{:.1f}'.format(x6))
-
 #x6=st.number_input("กรุณาป้อนข้อมูล BMI Body mass index (weight in kg/(height in m)^2):")
 
 x7 = st.number_input("กรุณาป้อนข้อมูล DiabetesPedigreeFunction (Diabetes pedigree function):")
@@ -69,6 +63,10 @@ x8 = st.number_input("กรุณาป้อนข้อมูล Age (years):
 
 
 if st.button("พยากรณ์ข้อมูล"):
+
+    x6 = weight / pow(height, 2)
+    st.write("BMI ของคุณคือ:", '{:.1f}'.format(x6))
+
     x_input=[[x1,x2,x3,x4,x5,x6,x7,x8]]
     st.write("พยากรณ์ข้อมูลจากข้อมูลชุดนี้: ")
     st.dataframe(x_input)
