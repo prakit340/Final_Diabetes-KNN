@@ -2,6 +2,11 @@
     background-color: transparent;
 }
 
+.stApp > h1 {
+    text-align: center;
+    color: white;
+}
+
 .stApp {
     margin: auto;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
