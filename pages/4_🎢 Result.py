@@ -82,7 +82,7 @@ st.header("ผลลัพธ์ Confusuin Matrix")
 matrix = confusion_matrix(y_test, y_predKNN)
 plt.figure(figsize=(10, 8))
 fig2 = sns.heatmap(matrix, annot=True)
-st.pyplot(fig2)
+st.write(fig2)
 
 st.markdown("""<hr style="height:5px;border:none;color:#FF4B4B;background-color:#FF4B4B;" /> """, unsafe_allow_html=True)
 
