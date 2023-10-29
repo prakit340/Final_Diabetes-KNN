@@ -85,21 +85,21 @@ st.markdown("""<hr style="height:5px;border:none;color:#FF4B4B;background-color:
 
 y_target = ['Diabetes', 'Normal']
 
-st.write("ความแม่นยำของ Decision Tree Classifier:", '{:.2f}'.format(accuracyDT))
+st.header("ความแม่นยำของ Decision Tree Classifier:", '{:.2f}'.format(accuracyDT))
 st.dataframe(
     pd.DataFrame(
         classification_report(y_test, y_predDT, target_names = y_target, output_dict=True)
     ).transpose()
 )
 
-st.write("ความแม่นยำของ Naive Bayes Tree Classifier:", '{:.2f}'.format(accuracyNB))
+st.header("ความแม่นยำของ Naive Bayes Tree Classifier:", '{:.2f}'.format(accuracyNB))
 st.dataframe(
     pd.DataFrame(
         classification_report(y_test, y_predNB, target_names = y_target, output_dict=True)
     ).transpose()
 )
 
-st.write("ความแม่นยำของ K-Nearest Neighbors (KNN) Classifier:", '{:.2f}'.format(accuracyKNN))
+st.header("ความแม่นยำของ K-Nearest Neighbors (KNN) Classifier:", '{:.2f}'.format(accuracyKNN))
 st.dataframe(
     pd.DataFrame(
         classification_report(y_test, y_predKNN, target_names = y_target, output_dict=True)

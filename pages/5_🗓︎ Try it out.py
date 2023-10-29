@@ -27,17 +27,13 @@ st.markdown(f'<style>{css}</style>', unsafe_allow_html=True)
 st.image('./images/header.jpg')
 st.sidebar.markdown("# Try it out 🗓︎")
 
-st.title("Diabetes Prediction")
-st.header("Diabetes Prediction Prakit Junkhum 633230010 24.2")
+st.title("ทดลองใช้งาน")
+st.write("")
 
 df=pd.read_csv('./data/diabetes.csv')
-st.write(df.head(12))
 
-#st.line_chart(df)
-#st.line_chart(df, x="interest_rate", y="unemployment_rate", color="stock_index_price")
-# st.line_chart(
-#    df, x="interest_rate", y=["unemployment_rate", "stock_index_price"], color=["#FF0000", "#0000FF"]  # Optional
-# )
+st.header("ตัวอย่างข้อมูล")
+st.write(df.head(5))
 
 x = df.iloc[:, 0:8]     # Select all row and column with 0-7
 y = df['Outcome']       # Column Outcome for Output
@@ -51,17 +47,20 @@ x_test=scaler.transform(x_test)
 knnModel = KNeighborsClassifier(n_neighbors=15, metric='euclidean', p=2)        # Use KNN algorithm
 knnModel.fit(x_train, y_train)
 
-x1=st.number_input("กรุณาป้อนข้อมูล Pregnancies:")
-x2=st.number_input("กรุณาป้อนข้อมูล Glucose:")
-x3=st.number_input("กรุณาป้อนข้อมูล BloodPressure:")
-x4=st.number_input("กรุณาป้อนข้อมูล SkinThickness:")
-x5=st.number_input("กรุณาป้อนข้อมูล Insulin:")
-x6=st.number_input("กรุณาป้อนข้อมูล BMI:")
-x7=st.number_input("กรุณาป้อนข้อมูล DiabetesPedigreeFunction:")
-x8=st.number_input("กรุณาป้อนข้อมูล Age:")
+x1=st.number_input("กรุณาป้อนข้อมูล จำนวนการตั้งครรภ์ (Pregnancies)")
+x2=st.number_input("กรุณาป้อนข้อมูล Glucose (ความเข้มข้นของกลูโคสในพลาสมาเป็นเวลา 2 ชั่วโมงในการทดสอบความทนทานต่อกลูโคสในช่องปาก):")
+x3=st.number_input("กรุณาป้อนข้อมูล ความดันโลหิต BloodPressure (mm Hg):")
+x4=st.number_input("กรุณาป้อนข้อมูล ความหนาของรอยพับของผิวหนัง Triceps SkinThickness (mm) :")
+x5=st.number_input("กรุณาป้อนข้อมูล อินซูลินในเลือด 2 ชั่วโมง Insulin (mu U/ml):")
+x6=st.number_input("กรุณาป้อนข้อมูล BMI Body mass index (weight in kg/(height in m)^2):")
+x7=st.number_input("กรุณาป้อนข้อมูล DiabetesPedigreeFunction (Diabetes pedigree function):")
+x8=st.number_input("กรุณาป้อนข้อมูล Age (years):")
+
 
 if st.button("พยากรณ์ข้อมูล"):
     x_input=[[x1,x2,x3,x4,x5,x6,x7,x8]]
+    st.write("พยากรณ์ข้อมูลจากข้อมูล: ")
+    st.write(x_input)
     y_predict=knnModel.predict(scaler.transform(x_input))
     if y_predict == 1:
         st.write("มีความเสียงเป็นเบาหวาน")
