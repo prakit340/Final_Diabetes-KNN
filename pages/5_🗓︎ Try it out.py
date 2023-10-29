@@ -63,9 +63,9 @@ if st.button("พยากรณ์ข้อมูล"):
     st.write(x_input)
     y_predict=knnModel.predict(scaler.transform(x_input))
     if y_predict == 1:
-        st.write("มีความเสียงเป็นเบาหวาน")
+        st.success("มีความเสียงเป็นเบาหวาน")
     else:
-        st.write("ไม่มีความเสี่ยง / ปกติ")
+        st.alert("ไม่มีความเสี่ยง / ปกติ")
     st.button("ไม่พยากรณ์ข้อมูล")
 else:
     st.button("ไม่พยากรณ์ข้อมูล")
