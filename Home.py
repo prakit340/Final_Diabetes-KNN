@@ -18,9 +18,8 @@ with open('./files/wave.css') as f:
     css = f.read()
 st.markdown(f'<style>{css}</style>', unsafe_allow_html=True)
 
-st.markdown("<center><h1>การจำแนกโรคเบาหวาน<h1></center>", unsafe_allow_html = True)
-
-st.markdown("<center><h4>จัดทำโดย<h4></center>", unsafe_allow_html = True)
-st.markdown("<center><h3>ประกฤต จันทร์ขำ 633230010 24.2<h3></center>", unsafe_allow_html = True)
+st.title("การจำแนกโรคเบาหวาน")
+st.write("จัดทำโดย")
+st.header("ประกฤต จันทร์ขำ 633230010 24.2")
 
 st.image('./images/diabetes.jpg')
