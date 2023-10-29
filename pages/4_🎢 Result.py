@@ -30,7 +30,8 @@ st.header('ตัวอย่างข้อมูล')
 st.write(df.head(10))
 
 st.header('Plot จากค่าของ Outcome ระหว่าง Diabetes กับ Normal ที่แต่ละ Attribute')
-st.write(sns.PairGrid(df,hue='Outcome'))
+fig = sns.pairplot(df,hue='Outcome')
+st.pyplot(fig)
 
 st.header("ศึกษาตัวแปรใดมีผลกับโรคเบาหวาน โดยใช้ตาราง Heatmap")
 corr = df.corr()
