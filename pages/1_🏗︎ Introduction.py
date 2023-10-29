@@ -4,11 +4,12 @@ import requests
 import streamlit as st
 
 st.set_page_config(
-    page_title="Prakit CEO ThaiControlSolution",
+    page_title="Prakit Junkhum 633230010 24.2",
     page_icon= ":bar_chart:",
 )
 
-st.sidebar.markdown("# Page 2 ❄️")
+st.image('./images/header.jpg')
+st.sidebar.markdown("# Introduction 🏗︎")
 
 st.write("# การพยากรณ์ราคาหุ้น! 👋  🧑🏽‍🏫 ")
 st.write("🌤︎ 🌥︎ 🌦︎ 🌧︎ 🌨︎ 🌩︎ 🌪︎ 🌫︎ 🌬︎ 🌶︎ 🍽︎ 🎖︎ 🎗︎")

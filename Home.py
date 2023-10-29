@@ -12,6 +12,7 @@ st.set_page_config(
 )
 
 st.image('./images/header.jpg')
+st.sidebar.markdown("# Home 🏘︎")
 
 st.markdown("<center><h1>การจำแนกโรคเบาหวาน<h1></center>", unsafe_allow_html = True)
 

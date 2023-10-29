@@ -15,6 +15,14 @@ from sklearn import metrics
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score    # Import measure performance function
 from sklearn.metrics import classification_report, confusion_matrix
 
+st.set_page_config(
+    page_title="Prakit Junkhum 633230010 24.2",
+    page_icon= ":bar_chart:",
+)
+
+st.image('./images/header.jpg')
+st.sidebar.markdown("# Try it out 🗓︎")
+
 st.title("Diabetes Prediction")
 st.header("Diabetes Prediction Prakit Junkhum 633230010 24.2")
 
