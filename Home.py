@@ -9,7 +9,7 @@ from streamlit_lottie import st_lottie_spinner
 st.markdown(
     """
     <style>
-    .reportview-container {
+    body {
         background-color: gray;
     }
    </style>
