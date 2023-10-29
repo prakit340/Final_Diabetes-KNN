@@ -26,13 +26,12 @@ st.write("")
 
 df=pd.read_csv('./data/diabetes.csv')
 
-st.text('ตัวอย่างข้อมูล')
+st.header('ตัวอย่างข้อมูล')
 st.write(df.head(10))
 
-st.text('Plot จากค่าของ Outcome ระหว่าง Diabetes กับ Normal ที่แต่ละ Attribute')
-st.write(sns.pairplot(df,hue='Outcome'))
+st.header('Plot จากค่าของ Outcome ระหว่าง Diabetes กับ Normal ที่แต่ละ Attribute')
+st.write(sns.PairGrid(df,hue='Outcome'))
 
-st.header("Show Chart")
-st.line_chart(
-   df, x="stock_index_price", y=["interest_rate", "unemployment_rate"], color=["#FF0000", "#0000FF"]  # Optional
-)
+st.header("ศึกษาตัวแปรใดมีผลกับโรคเบาหวาน โดยใช้ตาราง Heatmap")
+corr = df.corr()
+st.write(corr.style.background_gradient(cmap='coolwarm'))
