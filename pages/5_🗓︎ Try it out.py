@@ -35,6 +35,10 @@ df=pd.read_csv('./data/diabetes.csv')
 st.header("ตัวอย่างข้อมูล")
 st.write(df.head(5))
 
+st.markdown("""<hr style="height:5px;border:none;color:#FF4B4B;background-color:#FF4B4B;" /> """, unsafe_allow_html=True)
+
+st.header("ใส่ข้อมูลที่ต้องการ")
+
 x = df.iloc[:, 0:8]     # Select all row and column with 0-7
 y = df['Outcome']       # Column Outcome for Output
 
