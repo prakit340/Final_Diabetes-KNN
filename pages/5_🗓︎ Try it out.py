@@ -56,12 +56,11 @@ x5 = st.number_input("กรุณาป้อนข้อมูล อินซ
 height = st.number_input("กรุณาป้อน ส่วนสูง สำหรับคำนวณ BMI (m):")
 weight = st.number_input("กรุณาป้อน น้ำหนัก สำหรับคำนวณ BMI (kg):")
 
-bmiVal = 0.0
+x6 = 0.0
 
 if st.button("คำนวณ BMI"):
-    bmiVal = weight / pow(height, 2)
-    st.write("BMI ของคุณคือ:", '{:.1f}'.format(bmiVal))
-    x6 = bmiVal
+    x6 = weight / pow(height, 2)
+    st.write("BMI ของคุณคือ:", '{:.1f}'.format(x6))
 
 #x6=st.number_input("กรุณาป้อนข้อมูล BMI Body mass index (weight in kg/(height in m)^2):")
 
