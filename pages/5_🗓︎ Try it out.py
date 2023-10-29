@@ -57,7 +57,7 @@ x3 = st.number_input("กรุณาป้อนข้อมูล ความ
 x4 = st.number_input("กรุณาป้อนข้อมูล ความหนาของรอยพับของผิวหนัง Triceps SkinThickness (mm) :")
 x5 = st.number_input("กรุณาป้อนข้อมูล อินซูลินในเลือด 2 ชั่วโมง Insulin (mu U/ml):")
 
-height = st.number_input("กรุณาป้อน ส่วนสูง สำหรับคำนวณ BMI (m):")
+height = st.number_input("กรุณาป้อน ส่วนสูง สำหรับคำนวณ BMI (cm):")
 weight = st.number_input("กรุณาป้อน น้ำหนัก สำหรับคำนวณ BMI (kg):")
 
 #x6=st.number_input("กรุณาป้อนข้อมูล BMI Body mass index (weight in kg/(height in m)^2):")
@@ -68,7 +68,8 @@ x8 = st.number_input("กรุณาป้อนข้อมูล Age (years):
 
 if st.button("พยากรณ์ข้อมูล"):
 
-    x6 = weight / pow(height, 2)
+    heightCm = height/100.0
+    x6 = weight / pow(heightCm, 2)
     st.write("BMI ของคุณคือ:", '{:.1f}'.format(x6))
 
     x_input=[[x1,x2,x3,x4,x5,x6,x7,x8]]
