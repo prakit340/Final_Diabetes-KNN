@@ -35,7 +35,7 @@ st.write(df.head(10))
 
 st.markdown("""<hr style="height:5px;border:none;color:#FF4B4B;background-color:#FF4B4B;" /> """, unsafe_allow_html=True)
 
-st.header('Plot จากค่าของ Outcome ระหว่าง Diabetes กับ Normal ที่แต่ละ Attribute')
+st.header('Plot จากค่าของ Outcome ระหว่าง Diabetes กับ Normal ที่แต่ละ Attribute (กรุณารอหน้าเว็บไซต์ประมวลผลซักครู่)')
 fig = sns.pairplot(df,hue='Outcome')
 st.pyplot(fig)
 
