@@ -18,7 +18,9 @@ lottie_hello = load_lottieurl(lottie_url_hello)
 lottie_download = load_lottieurl(lottie_url_download)
 
 
-st_lottie(lottie_hello, key="hello")
+#st_lottie(lottie_hello, key="hello")
+
+st.image('./images/header.jpg')
 
 if st.button("Download"):
     with st_lottie_spinner(lottie_download, key="download"):
