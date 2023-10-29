@@ -47,24 +47,23 @@ x_test=scaler.transform(x_test)
 knnModel = KNeighborsClassifier(n_neighbors=15, metric='euclidean', p=2)        # Use KNN algorithm
 knnModel.fit(x_train, y_train)
 
-x1=st.number_input("กรุณาป้อนข้อมูล จำนวนการตั้งครรภ์ (Pregnancies)")
-x2=st.number_input("กรุณาป้อนข้อมูล Glucose (ความเข้มข้นของกลูโคสในพลาสมาเป็นเวลา 2 ชั่วโมงในการทดสอบความทนทานต่อกลูโคสในช่องปาก):")
-x3=st.number_input("กรุณาป้อนข้อมูล ความดันโลหิต BloodPressure (mm Hg):")
-x4=st.number_input("กรุณาป้อนข้อมูล ความหนาของรอยพับของผิวหนัง Triceps SkinThickness (mm) :")
-x5=st.number_input("กรุณาป้อนข้อมูล อินซูลินในเลือด 2 ชั่วโมง Insulin (mu U/ml):")
+x1 = st.number_input("กรุณาป้อนข้อมูล จำนวนการตั้งครรภ์ (Pregnancies)")
+x2 = st.number_input("กรุณาป้อนข้อมูล Glucose (ความเข้มข้นของกลูโคสในพลาสมาเป็นเวลา 2 ชั่วโมงในการทดสอบความทนทานต่อกลูโคสในช่องปาก):")
+x3 = st.number_input("กรุณาป้อนข้อมูล ความดันโลหิต BloodPressure (mm Hg):")
+x4 = st.number_input("กรุณาป้อนข้อมูล ความหนาของรอยพับของผิวหนัง Triceps SkinThickness (mm) :")
+x5 = st.number_input("กรุณาป้อนข้อมูล อินซูลินในเลือด 2 ชั่วโมง Insulin (mu U/ml):")
 
 height = st.number_input("กรุณาป้อน ส่วนสูง สำหรับคำนวณ BMI (m):")
 weight = st.number_input("กรุณาป้อน น้ำหนัก สำหรับคำนวณ BMI (kg):")
 
 if st.button("คำนวณ BMI"):
-    x6 = weight / pow(height, 2)
-    st.write("BMI ของคุณคือ:", '{:.1f}'.format(x6))
-else:
-    st.button("ยกเลิกคนวน")
-#x6=st.number_input("กรุณาป้อนข้อมูล BMI Body mass index (weight in kg/(height in m)^2):")
+    BMI = weight / pow(height, 2)
+    st.write("BMI ของคุณคือ:", '{:.1f}'.format(BMI))
 
-x7=st.number_input("กรุณาป้อนข้อมูล DiabetesPedigreeFunction (Diabetes pedigree function):")
-x8=st.number_input("กรุณาป้อนข้อมูล Age (years):")
+#x6=st.number_input("กรุณาป้อนข้อมูล BMI Body mass index (weight in kg/(height in m)^2):")
+x6 = BMI
+x7 = st.number_input("กรุณาป้อนข้อมูล DiabetesPedigreeFunction (Diabetes pedigree function):")
+x8 = st.number_input("กรุณาป้อนข้อมูล Age (years):")
 
 
 if st.button("พยากรณ์ข้อมูล"):
