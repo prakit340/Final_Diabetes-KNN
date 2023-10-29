@@ -92,7 +92,7 @@ st.dataframe(
     ).transpose()
 )
 
-st.header("ความแม่นยำของ Naive Bayes Tree Classifier:", '{:.2f}'.format(accuracyNB))
+st.header("ความแม่นยำของ Naive Bayes Classifier:", '{:.2f}'.format(accuracyNB))
 st.dataframe(
     pd.DataFrame(
         classification_report(y_test, y_predNB, target_names = y_target, output_dict=True)
