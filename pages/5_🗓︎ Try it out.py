@@ -20,6 +20,10 @@ st.set_page_config(
     page_icon= ":bar_chart:",
 )
 
+with open('./files/wave.css') as f:
+    css = f.read()
+st.markdown(f'<style>{css}</style>', unsafe_allow_html=True)
+
 st.image('./images/header.jpg')
 st.sidebar.markdown("# Try it out 🗓︎")
 
