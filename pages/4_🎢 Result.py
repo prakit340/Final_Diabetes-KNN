@@ -71,13 +71,6 @@ accuracyNB = accuracy_score(y_test, y_predNB)
 y_predKNN = knnModel.predict(x_test)
 accuracyKNN = accuracy_score(y_test, y_predKNN)
 
-y_target = ['Diabetes', 'Normal']
-clfDT_report = classification_report(y_test, y_predDT, target_names = y_target)
-
-clfNB_report = classification_report(y_test, y_predNB, target_names = y_target)
-
-clfKNN_report = classification_report(y_test, y_predKNN, target_names = y_target)
-
 st.header("ผลลัพธ์ Confusuin Matrix")
 matrix = confusion_matrix(y_test, y_predKNN)
 plt.figure(figsize=(10, 8))
@@ -86,11 +79,25 @@ st.write(fig2)
 
 st.markdown("""<hr style="height:5px;border:none;color:#FF4B4B;background-color:#FF4B4B;" /> """, unsafe_allow_html=True)
 
+y_target = ['Diabetes', 'Normal']
+
 st.write("ความแม่นยำของ Decision Tree Classifier:", '{:.2f}'.format(accuracyDT))
-st.write(clfDT_report)
+st.dataframe(
+    pd.DataFrame(
+        classification_report(y_test, y_predDT, target_names = y_target)
+    ).transpose()
+)
 
 st.write("ความแม่นยำของ Naive Bayes Tree Classifier:", '{:.2f}'.format(accuracyNB))
-st.write(clfNB_report)
+st.dataframe(
+    pd.DataFrame(
+        classification_report(y_test, y_predNB, target_names = y_target)
+    ).transpose()
+)
 
 st.write("ความแม่นยำของ K-Nearest Neighbors (KNN) Classifier:", '{:.2f}'.format(accuracyKNN))
-st.write(clfKNN_report)
+st.dataframe(
+    pd.DataFrame(
+        classification_report(y_test, y_predKNN, target_names = y_target)
+    ).transpose()
+)
