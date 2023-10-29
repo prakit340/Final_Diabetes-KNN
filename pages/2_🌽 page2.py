@@ -14,3 +14,9 @@ def load_lottieurl(url: str):
 lottie_url_hello = "https://lottie.host/39ffe0b6-d72e-4afc-a9f9-ed81898db844/kUp4Kpvzyx.json"
 lottie_hello = load_lottieurl(lottie_url_hello)
 st_lottie(lottie_hello, key="hello")
+
+st.markdown("# Page 2 ❄️")
+st.sidebar.markdown("# Page 2 ❄️")
+
+st.markdown("# Page 3 🎉")
+st.sidebar.markdown("# Page 3 🎉")
