@@ -11,6 +11,10 @@ st.set_page_config(
 st.image('./images/header.jpg')
 st.sidebar.markdown("# Proceed 🎛")
 
+with open('./files/wave.css') as f:
+    css = f.read()
+st.markdown(f'<style>{css}</style>', unsafe_allow_html=True)
+
 st.title("วิธีการดำเนินการ")
 st.write("")
 st.image('./images/overall.png')
